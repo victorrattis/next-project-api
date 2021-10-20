@@ -1,4 +1,4 @@
-package com.example.desafionextapi.service;
+package com.example.desafionextapi.services;
 
 import com.example.desafionextapi.entities.Projeto;
 import org.springframework.stereotype.Service;
@@ -17,10 +17,6 @@ public class ProjetoService {
         projetos.add(new Projeto(4));
     }
 
-    //public List<Projeto> getProjetos(){
-    //    return ArrayList<>;
-    //}
-
     public Projeto find(long id){
         for(Projeto projeto : projetos) {
             if(projeto.getId() == id ){
@@ -29,18 +25,13 @@ public class ProjetoService {
         }
         return null;
     }
-
-}
-
-
-
-/*@Autowired
-    private ProjetoDAO projetoDAO;
-
-    //public ProjetoService(ProjetoDAO projetoDAO) {
-    //    this.projetoDAO = projetoDAO;
+    public Projeto update (long id) {
+        for(Projeto projeto : projetos) {
+            if (projeto.getId() == id) {
+                projeto.setId(7);
+                return projeto;
+            }
+        }
+        return null;
     }
-
-    public Projeto find(long id) {
-        return projetoDAO.findById(id).get();
-    }*/
+}

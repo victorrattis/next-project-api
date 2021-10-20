@@ -1,6 +1,4 @@
 package com.example.desafionextapi.entities;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 public class Projeto {
     private long id;
@@ -9,7 +7,7 @@ public class Projeto {
         this.setId(id);
     }
 
-    private void setId(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
