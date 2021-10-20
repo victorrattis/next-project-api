@@ -1,8 +1,5 @@
 package com.example.desafionextapi.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 public class Projeto {
     private long id;
 
