@@ -8,6 +8,7 @@ import java.util.List;
 
 @Service
 public class UserService {
+
     private List<User> users = new ArrayList<>();
 
     public void saveUser(User user) {
@@ -17,4 +18,5 @@ public class UserService {
     public List<User> getUsers() {
         return users;
     }
+
 }
