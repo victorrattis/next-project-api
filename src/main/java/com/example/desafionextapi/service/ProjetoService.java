@@ -17,10 +17,6 @@ public class ProjetoService {
         projetos.add(new Projeto(4));
     }
 
-    //public List<Projeto> getProjetos(){
-    //    return ArrayList<>;
-    //}
-
     public Projeto find(long id){
         for(Projeto projeto : projetos) {
             if(projeto.getId() == id ){
@@ -31,16 +27,3 @@ public class ProjetoService {
     }
 
 }
-
-
-
-/*@Autowired
-    private ProjetoDAO projetoDAO;
-
-    //public ProjetoService(ProjetoDAO projetoDAO) {
-    //    this.projetoDAO = projetoDAO;
-    }
-
-    public Projeto find(long id) {
-        return projetoDAO.findById(id).get();
-    }*/
