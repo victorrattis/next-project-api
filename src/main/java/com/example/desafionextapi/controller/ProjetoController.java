@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 public class ProjetoController {
-
     @Autowired
     private ProjetoService projetoService;
 
@@ -19,4 +18,11 @@ public class ProjetoController {
     public ResponseEntity<List<Projeto>> allProjects(){
         return ResponseEntity.ok().body(projetoService.getProjetos());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Projeto> find (@PathVariable long id){
+        Projeto projeto = projetoService.find(id);
+        return ResponseEntity.ok().body(projeto);
+    }
 }
+
