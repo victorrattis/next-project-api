@@ -1,0 +1,46 @@
+package com.example.desafionextapi.service;
+
+import com.example.desafionextapi.entities.Projeto;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class ProjetoService {
+
+    private List<Projeto> projetos = new ArrayList<>();
+    public ProjetoService() {
+        projetos.add(new Projeto(1));
+        projetos.add(new Projeto(2));
+        projetos.add(new Projeto(3));
+        projetos.add(new Projeto(4));
+    }
+
+    //public List<Projeto> getProjetos(){
+    //    return ArrayList<>;
+    //}
+
+    public Projeto find(long id){
+        for(Projeto projeto : projetos) {
+            if(projeto.getId() == id ){
+                return projeto;
+            }
+        }
+        return null;
+    }
+
+}
+
+
+
+/*@Autowired
+    private ProjetoDAO projetoDAO;
+
+    //public ProjetoService(ProjetoDAO projetoDAO) {
+    //    this.projetoDAO = projetoDAO;
+    }
+
+    public Projeto find(long id) {
+        return projetoDAO.findById(id).get();
+    }*/
