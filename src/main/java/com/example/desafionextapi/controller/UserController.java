@@ -21,7 +21,7 @@ public class UserController {
         userService.saveUser(user);
     }
 
-    @GetMapping("/all_users")
+    @GetMapping("/users")
     public ResponseEntity<List<User>> allUsers(){
         return ResponseEntity.ok().body(userService.getUsers());
     }
