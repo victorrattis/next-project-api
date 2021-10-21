@@ -4,6 +4,7 @@ plugins {
 	id 'java'
 }
 
+// TODO: Mudar o valor do grupo para "com.example.desafionextapi"
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
