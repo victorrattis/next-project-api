@@ -8,9 +8,13 @@ import java.util.List;
 @Service
 public class ProjectService {
 
-    public List<Project> projetos = new ArrayList<>();
+    public List<Project> projects = new ArrayList<>();
 
     public void saveProject(Project project){
-        projetos.add(project);
+        projects.add(project);
+    }
+
+    public List<Project> getProjects() {
+        return projects;
     }
 }
