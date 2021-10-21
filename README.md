@@ -13,6 +13,7 @@ Implementar o micro serviço descrito acima com o intuito de que seja a fonte da
 - Prover uma API que será consumida por outros micro serviços que precisem das informações de projeto dentro da organização. As seguintes URLs podem ser providas (não precisa limitar ao que está aqui):
 
 ### REST API:
+
 - GET http://<servidor>/projects; retornar a lista de projetos cadastrados no banco de dados; OPCIONAL: incluir filtros por certas entidades mencionadas acima
 - POST http://<servidor>/projects; adicionar um novo projeto ao banco de dados.
 - PUT http://<servidor>/projects/<id>; editar projeto existente no banco de dados.
