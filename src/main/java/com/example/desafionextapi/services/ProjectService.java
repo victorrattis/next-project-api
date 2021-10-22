@@ -13,4 +13,8 @@ public class ProjectService {
     public void saveProject(Project project){
         projetos.add(project);
     }
+
+    public int numeroDeProjetosCadastrados() {
+        return projetos.size();
+    }
 }
