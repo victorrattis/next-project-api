@@ -1,7 +1,6 @@
 package com.example.desafionextapi.controller;
 
 import com.example.desafionextapi.entities.Projeto;
-import com.example.desafionextapi.services.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
