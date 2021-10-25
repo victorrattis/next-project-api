@@ -3,7 +3,11 @@ package com.example.desafionextapi.entities;
 public class Project {
     private Long id;
 
-    public void setId(Long id) {
+    public Project(long id) {
+        this.id = id;
+    }
+
+    public void setId(long id) {
         this.id = id;
     }
 
