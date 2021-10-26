@@ -34,8 +34,31 @@ Caso haja tempo e tarefas possam ser paralelizadas, outras coisas podem ser feit
 - Criar containers docker para rodar o servidor, banco de dados e UI
 Gerar uma autenticação ao sistema usando JWT
 
+### Script Banco de dados(projetogrupoe)
+```create database projetogrupoe;
+	create table usuario (
+		id int not null auto_increment,
+		priNome varchar(50),
+		segNome varchar(50),
+		matriculaOrg int(10),
+		ativo boolean,
+		dataNasc date,
+		centroCusto varchar(50),
+		primary key(id)
+    	);
 
-
+	create table projeto (
+		id int not null auto_increment,
+		nomeProjeto varchar(50),
+		centroCusto varchar(50),
+		gerenteProjeto varchar(50),
+		dataIni date,
+		dataFim date,
+		statusPro varchar(50),
+		flagPro varchar(50),
+		primary key(id)
+		);
+	```
 ### Referências
 https://spring.io/guides/tutorials/rest/
 
