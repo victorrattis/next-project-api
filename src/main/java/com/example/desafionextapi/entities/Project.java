@@ -1,11 +1,12 @@
 package com.example.desafionextapi.entities;
 
-public class Project {
-    private Long id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-    public Project(long id) {
-        this.id = id;
-    }
+@Entity
+public class Project {
+    @Id
+    private Long id;
 
     public void setId(long id) {
         this.id = id;
