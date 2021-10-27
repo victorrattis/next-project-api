@@ -66,11 +66,19 @@ public class ProjectService {
         Project project = projectDAO.findById(id).get();
         return convertToProjectDTO(project);
     }
-
+    /*
     public Project update(long id) {
         projectDAO.findById(id);
         project.setId(id);
         return project;
+    }
+
+     */
+
+    public ProjectDTO update(long id) {
+        Project project = projectDAO.findById(id).get();
+        project.setId(id);
+        return convertToProjectDTO(project);
     }
 
 }

@@ -52,10 +52,18 @@ public class ProjectController {
         return ResponseEntity.ok().body(projectDTO);
     }
 
-    //Falta Alterar
+    /*
     @PutMapping("/projects/{id}")
     public ResponseEntity<Project> update (@PathVariable long id){
         Project projeto = projectService.update(id);
         return ResponseEntity.ok(projeto);
+    }
+
+     */
+
+    @PutMapping("/projects/{id}")
+    public ResponseEntity<ProjectDTO> update (@PathVariable long id){
+        ProjectDTO projectDTO = projectService.update(id);
+        return ResponseEntity.ok(projectDTO);
     }
 }
