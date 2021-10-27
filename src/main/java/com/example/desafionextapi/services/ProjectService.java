@@ -20,7 +20,6 @@ public class ProjectService {
     public void saveProject(Project project){
         projects.add(project);
     }
-
     public List<Project> getProjects() {
         return projects;
     }
