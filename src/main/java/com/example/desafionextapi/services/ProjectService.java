@@ -55,9 +55,16 @@ public class ProjectService {
     }
 
     //Falta Alterar
-
+    /*
     public Project find(long id) {
         return projectDAO.findById(id).get();
+    }
+
+     */
+
+    public ProjectDTO find(long id) {
+        Project project = projectDAO.findById(id).get();
+        return convertToProjectDTO(project);
     }
 
     public Project update(long id) {

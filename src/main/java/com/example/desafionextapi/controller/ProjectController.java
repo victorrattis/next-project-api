@@ -37,12 +37,22 @@ public class ProjectController {
     }
 
     //Falta Alterar
+    /*
     @GetMapping("/projects/{id}")
     public ResponseEntity<Project> find (@PathVariable long id){
         Project projeto = projectService.find(id);
         return ResponseEntity.ok().body(projeto);
     }
 
+     */
+
+    @GetMapping("/projects/{id}")//Ok!
+    public ResponseEntity<ProjectDTO> find (@PathVariable long id){
+        ProjectDTO projectDTO = projectService.find(id);
+        return ResponseEntity.ok().body(projectDTO);
+    }
+
+    //Falta Alterar
     @PutMapping("/projects/{id}")
     public ResponseEntity<Project> update (@PathVariable long id){
         Project projeto = projectService.update(id);
