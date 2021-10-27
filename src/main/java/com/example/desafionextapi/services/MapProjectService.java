@@ -15,15 +15,15 @@ public class MapProjectService {
     @Autowired
     private ProjectDAO projectDAO;
 
-    public List<ProjectDTO> getAllUsersLocation() {
+    public List<ProjectDTO> allProjects() {
         return ((List<Project>) projectDAO
                 .findAll())
                 .stream()
-                .map(this::convertToUserLocationDTO)
+                .map(this::convertToProjectDTO)
                 .collect(Collectors.toList());
     }
 
-    private ProjectDTO convertToUserLocationDTO(Project project) {
+    private ProjectDTO convertToProjectDTO(Project project) {
         ProjectDTO projectDTO = new ProjectDTO();
         projectDTO.setId(project.getId());
         return projectDTO;

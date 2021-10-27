@@ -1,5 +1,6 @@
 package com.example.desafionextapi.controller;
 
+import com.example.desafionextapi.dto.ProjectDTO;
 import com.example.desafionextapi.entities.Project;
 import com.example.desafionextapi.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,15 @@ public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
-
+    /*
     @GetMapping("/projects")
     public ResponseEntity<List<Project>> allProjects(){
+        return ResponseEntity.ok().body(projectService.getProjects());
+    }
+
+     */
+    @GetMapping("/projects") // Ok!
+    public ResponseEntity<List<ProjectDTO>> allProjects() {
         return ResponseEntity.ok().body(projectService.getProjects());
     }
 
@@ -22,6 +29,7 @@ public class ProjectController {
     public void saveProject(@RequestBody Project project) {
         projectService.saveProject(project);
     }
+
 
     @GetMapping("/projects/{id}")
     public ResponseEntity<Project> find (@PathVariable long id){

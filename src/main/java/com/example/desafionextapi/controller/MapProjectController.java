@@ -17,8 +17,8 @@ public class MapProjectController {
 
     @GetMapping("/map")
     @ResponseBody
-    public List<ProjectDTO> getAllUsersLocation() {
-        List <ProjectDTO> usersLocation = mapProjectService.getAllUsersLocation();
-        return usersLocation;
+    public List<ProjectDTO> allProjects() {
+        List <ProjectDTO> projects = mapProjectService.allProjects();
+        return projects;
     }
 }
