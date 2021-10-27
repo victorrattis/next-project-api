@@ -1,6 +1,8 @@
 package com.example.desafionextapi.services;
 
+import com.example.desafionextapi.DAO.ProjectDAO;
 import com.example.desafionextapi.entities.Project;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,39 +10,28 @@ import java.util.List;
 
 @Service
 public class ProjectService {
-    public List<Project> projects = new ArrayList<>();
 
-    public ProjectService() {
-        projects.add(new Project(1));
-        projects.add(new Project(2));
-        projects.add(new Project(3));
-        projects.add(new Project(4));
-    }
+    @Autowired
+    private ProjectDAO projectDAO;
+
+    Project project = new Project();
 
     public void saveProject(Project project){
-        projects.add(project);
+        projectDAO.save(project);
     }
 
     public List<Project> getProjects() {
-        return projects;
+        return projectDAO.findAll();
     }
 
-    public Project find(long id){
-        for(Project projeto : projects) {
-            if(projeto.getId() == id ){
-                return projeto;
-            }
-        }
-        return null;
+    public Project find(long id) {
+        return projectDAO.findById(id).get();
     }
 
-    public Project update (long id) {
-        for(Project projeto : projects) {
-            if (projeto.getId() == id) {
-                projeto.setId(7);
-                return projeto;
-            }
-        }
-        return null;
+    public Project update(long id) {
+        projectDAO.findById(id);
+        project.setId(id);
+        return project;
     }
+
 }
