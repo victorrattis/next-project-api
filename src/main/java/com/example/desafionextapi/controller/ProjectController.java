@@ -24,13 +24,19 @@ public class ProjectController {
     public ResponseEntity<List<ProjectDTO>> allProjects() {
         return ResponseEntity.ok().body(projectService.getProjects());
     }
-
+    /*
     @PostMapping("/projects")
     public void saveProject(@RequestBody Project project) {
         projectService.saveProject(project);
     }
 
+     */
+    @PostMapping("/projects") //Ok!
+    public void saveProject(@RequestBody ProjectDTO projectDTO) {
+        projectService.saveProject(projectDTO);
+    }
 
+    //Falta Alterar
     @GetMapping("/projects/{id}")
     public ResponseEntity<Project> find (@PathVariable long id){
         Project projeto = projectService.find(id);

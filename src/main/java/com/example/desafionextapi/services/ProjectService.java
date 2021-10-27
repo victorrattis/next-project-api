@@ -19,9 +19,12 @@ public class ProjectService {
 
     Project project = new Project();
 
+    /*
     public void saveProject(Project project){
         projectDAO.save(project);
     }
+
+     */
      /*
     public List<Project> getProjects() {
         return projectDAO.findAll();
@@ -41,6 +44,17 @@ public class ProjectService {
         projectDTO.setId(project.getId());
         return projectDTO;
     }
+
+    public void saveProject(ProjectDTO projectDTO){
+        projectDAO.save(convertProjectDTOToProject(projectDTO));
+    }
+    private Project convertProjectDTOToProject(ProjectDTO projectDTO) {
+        Project project = new Project();
+        project.setId(projectDTO.getId());
+        return project;
+    }
+
+    //Falta Alterar
 
     public Project find(long id) {
         return projectDAO.findById(id).get();
