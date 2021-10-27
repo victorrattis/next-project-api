@@ -4,10 +4,12 @@ import com.example.desafionextapi.dao.ProjectDAO;
 import com.example.desafionextapi.dto.ProjectDTO;
 import com.example.desafionextapi.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class MapProjectService {
 
     @Autowired
