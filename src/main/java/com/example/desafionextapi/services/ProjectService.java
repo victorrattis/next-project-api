@@ -12,24 +12,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class ProjectService {
-    public List<Project> projects = new ArrayList<>();
 
     @Autowired
     private ProjectDAO projectDAO;
-
-    Project project = new Project();
-
-    /*
-    public void saveProject(Project project){
-        projectDAO.save(project);
-    }
-
-     */
-     /*
-    public List<Project> getProjects() {
-        return projectDAO.findAll();
-    }
-      */
 
     public List<ProjectDTO> getProjects() {
         return ((List<Project>) projectDAO
@@ -48,36 +33,21 @@ public class ProjectService {
     public void saveProject(ProjectDTO projectDTO){
         projectDAO.save(convertProjectDTOToProject(projectDTO));
     }
+
     private Project convertProjectDTOToProject(ProjectDTO projectDTO) {
         Project project = new Project();
         project.setId(projectDTO.getId());
         return project;
     }
 
-    //Falta Alterar
-    /*
-    public Project find(long id) {
-        return projectDAO.findById(id).get();
-    }
-
-     */
-
     public ProjectDTO find(long id) {
         Project project = projectDAO.findById(id).get();
         return convertToProjectDTO(project);
     }
-    /*
-    public Project update(long id) {
-        projectDAO.findById(id);
-        project.setId(id);
-        return project;
-    }
 
-     */
-
-    public ProjectDTO update(long id) {
+    public ProjectDTO update(long id, ProjectDTO projectDTO) {
         Project project = projectDAO.findById(id).get();
-        project.setId(id);
+        project.setId(projectDTO.getId());
         return convertToProjectDTO(project);
     }
 
