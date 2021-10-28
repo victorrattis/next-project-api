@@ -1,14 +1,29 @@
 package com.example.desafionextapi.entities;
 
-public class User {
+import javax.persistence.*;
+import java.sql.Date;
 
+@Entity
+@Table(name = "USER")
+public class User {
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "NOME")
+    private String nome;
 
-    public Long getId() {
-        return this.id;
-    }
+    @Column(name = "SOBRENOME")
+    private String sobrenome;
+
+    @Column(name = "MATRICULA")
+    private Long matricula;
+
+    @Column(name = "ATIVO")
+    private Boolean ativo;
+
+    @Column(name = "DATA_NASCIMENTO")
+    private Date dataNascimento;
+
+    @Column(name = "CENTRO_ASSOCIADO")
+    private String centroAssociado;
+
 }
